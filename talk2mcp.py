@@ -57,7 +57,7 @@ def format_scientific_superscript(s: str) -> str:
     return f"{mantissa} × 10{exp_sup}"
 
 
-API_KEY = "AIzaSyAE6QwGj5yeX5lsrRMUwI318OBT3hQ5DsU"
+API_KEY = os.getenv("GEMINI_API_KEY")
 MODEL = os.getenv("MODEL", "gemini-2.5-flash")
 if not API_KEY:
     raise RuntimeError("GEMINI_API_KEY not set in environment.")
